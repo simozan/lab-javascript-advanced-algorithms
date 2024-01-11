@@ -12,13 +12,13 @@ class Stack {
     // ... your code goes here
   }
 
-  push(item) { if (this.stackControl.length<this.MAX_SIZE) {
+  push(item) { if (this.canPush()===true) {
     this.stackControl.push(item);
     return (this.stackControl)}
-    //else if (this.stackControl.length>=this.MAX_SIZE){console.error("STACK_OVERFLOW")};
+    else throw new Error('STACK_OVERFLOW');
   }
 
-  pop() { if (this.stackControl.length===0){console.error("STACK_UNDERFLOW")}
+  pop() { if (this.stackControl.length===0){ throw new Error("STACK_UNDERFLOW")}
   else {
     // ... your code goes here
     const elementPop= (this.stackControl[this.stackControl.length-1])
