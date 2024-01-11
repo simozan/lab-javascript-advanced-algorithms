@@ -4,24 +4,31 @@ class Stack {
     this.MAX_SIZE = 10;
   }
 
-  canPush() {
+  canPush() { if (this.stackControl.length<this.MAX_SIZE) {return true} else {return false}
     // ... your code goes here
   }
 
-  isEmpty() {
+  isEmpty() { if (this.stackControl.length===0) {return true} else {return false}
     // ... your code goes here
   }
 
-  push(item) {
-    // ... your code goes here
+  push(item) { if (this.stackControl.length<this.MAX_SIZE) {
+    this.stackControl.push(item);
+    return (this.stackControl)}
+    //else if (this.stackControl.length>=this.MAX_SIZE){console.error("STACK_OVERFLOW")};
   }
 
-  pop() {
+  pop() { if (this.stackControl.length===0){console.error("STACK_UNDERFLOW")}
+  else {
     // ... your code goes here
+    const elementPop= (this.stackControl[this.stackControl.length-1])
+    this.stackControl.pop();
+    return elementPop}
   }
 
   display() {
     // ... your code goes here
+    return this.stackControl
   }  
 }
 
